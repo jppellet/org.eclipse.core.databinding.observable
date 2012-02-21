@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component name="org.eclipse.core.databinding.observable_1.4.0.I20110222-0800" version="1.2">
+    <plugin id="org.eclipse.core.databinding.observable_1.4.0.I20110222-0800"/>
+    <package name="org.eclipse.core.databinding.observable" visibility="1">
+        <type name="IDecoratingObservable" restrictions="1"/>
+        <type name="IObservable" restrictions="1"/>
+        <type name="IObservableCollection" restrictions="3"/>
+        <type name="IObservablesListener" restrictions="2"/>
+    </package>
+    <package name="org.eclipse.core.databinding.observable.list" visibility="1">
+        <type name="IObservableList" restrictions="1"/>
+    </package>
+    <package name="org.eclipse.core.databinding.observable.map" visibility="1">
+        <type name="IObservableMap" restrictions="1"/>
+    </package>
+    <package name="org.eclipse.core.databinding.observable.set" visibility="1">
+        <type name="IObservableSet" restrictions="1"/>
+    </package>
+    <package name="org.eclipse.core.databinding.observable.value" visibility="1">
+        <type name="IObservableValue" restrictions="1"/>
+        <type name="IVetoableValue" restrictions="3"/>
+        <type name="SelectObservableValue" restrictions="2"/>
+    </package>
+</component>
