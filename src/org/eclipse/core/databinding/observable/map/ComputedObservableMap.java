@@ -37,12 +37,11 @@ import org.eclipse.core.internal.databinding.identity.IdentitySet;
  * Maps objects to one of their attributes. Tracks changes to the underlying
  * observable set of objects (keys), as well as changes to attribute values.
  */
-public abstract class ComputedObservableMap<K, V> extends
-AbstractObservableMap<K, V> {
+public abstract class ComputedObservableMap<K, V> extends AbstractObservableMap<K, V> {
 
-private IObservableSet<K> keySet;
+	private IObservableSet<K> keySet;
 
-private Set<K> knownKeys;
+	private Set<K> knownKeys;
 
 	private Object valueType;
 

@@ -23,8 +23,7 @@ import org.eclipse.core.databinding.observable.DecoratingObservableCollection;
  * 
  * @since 1.2
  */
-public class DecoratingObservableList<E> extends
-DecoratingObservableCollection<E> implements IObservableList<E> {
+public class DecoratingObservableList<E> extends DecoratingObservableCollection<E> implements IObservableList<E> {
 
 	private IObservableList<E> decorated;
 
