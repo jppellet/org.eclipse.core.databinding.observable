@@ -13,7 +13,7 @@ package org.eclipse.core.internal.databinding.observable.masterdetail;
 
 import java.util.AbstractSet;
 import java.util.Collections;
-import java.util.IdentityHashMap;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -52,8 +52,11 @@ public class MapDetailValueObservableMap<K, I, V> extends AbstractObservableMap<
 
 	private Set<Map.Entry<K, V>> entrySet;
 
-	private IdentityHashMap<K, IObservableValue<V>> keyDetailMap = new IdentityHashMap<K, IObservableValue<V>>();
-
+//	private IdentityHashMap<K, IObservableValue<V>> keyDetailMap = new IdentityHashMap<K, IObservableValue<V>>();
+	private Map<K, IObservableValue<V>> keyDetailMap = new HashMap<K, IObservableValue<V>>(); // JPP changed
+	// this cannot be an identity hash map, otherwise keys found in 'this' may not be found in the identity map
+	// and will give NPEs in this.get()
+	
 	private IdentitySet<IObservableValue<V>> staleDetailObservables = new IdentitySet<IObservableValue<V>>();
 
 	private IMapChangeListener<K, I> masterMapListener = new IMapChangeListener<K, I>() {
@@ -241,6 +244,9 @@ public class MapDetailValueObservableMap<K, I, V> extends AbstractObservableMap<
 		// safe because key is contained
 		K castKey = (K) key;
 		IObservableValue<V> detailValue = getDetailObservableValue(castKey);
+//		if(detailValue == null) {
+//			int i = 5; // TODO remove
+//		}
 		return detailValue.getValue();
 	}
 
